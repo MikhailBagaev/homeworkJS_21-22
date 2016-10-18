@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EcmaScript6</title>
+	<link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>	
+	<script src="js/tmpl.resig.js"></script>
+	<script src="js/dist/script2.js"></script>
+</head>
+<body>
+      <script id="parsed-resig" type="text/template">
+    <div class="wrapper">       
+            <h1>
+            <%= data[0].headerTest %>
+            </h1>
+            <form action="#" method="get" name="Form"> 
+            <% for (var i = 1; i < data.length - 1; i++) { %>   
+            <p>
+                <%= data[i].question %>
+            </p>                    
+            <ul class="<%= 'ul' + String(i) %>"">
+            <% for (var j = 0; j < data[i].blockAnswer.length; j++) { %> 
+                <li>
+                    <label>
+                        <input type="checkbox" class="answerItem <%= 'cbGroup' + (i) %>" name="<%= 'cb' + String(i) + String(j) %>" value="<%= (j) %>">
+                        <span>
+                        <%= data[i].blockAnswer[j] %>       
+                        </span>
+                    </label>        
+                </li>                
+            <% }; %> 
+            </ul>                   
+            <% }; %>
+            <%= data[4].button %>
+            </form> 
+            </div>      
+    </script>         	
+</body>
+</html>
